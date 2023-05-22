@@ -18,5 +18,6 @@ Also, the instructions for use can be viewed at the link: https://youtu.be/SHJ_8
 
 ## Commands and Permissions
 /smartarrow - Activate the modification
+<br>
 use.smartarrow - Allows you to use the /smartarrow command
 
