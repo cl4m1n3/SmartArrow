@@ -18,7 +18,7 @@ class SmartArrow extends PluginBase
     {
         Server::getInstance()->getPluginManager()->registerEvents(new Event(), $this);
         Server::getInstance()->getCommandMap()->register("smartarrow", new SmartArrowCommand());
-        $this->getScheduler()->scheduleRepeatingTask(new Tasks($this), 3);
+        $this->getScheduler()->scheduleRepeatingTask(new Tasks($this), 5);
     }
     
     public static function getStatus(Player $player) : bool
