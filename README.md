@@ -5,8 +5,8 @@ Plugin for PocketMine-MP 4.X.X
 This plugin turns an ordinary arrow into a smart one that flies to the target by itself
 
 ## Using
-- Activate the modification using the /guidedarrow command
-- Shoot the player or hit him with a **bow** so that he is identified as the target
+- Activate the modification using the /smartarrow command
+- Shoot the player or hit him with a **BOW** so that he is identified as the target
 - Now the player is the target and you can shoot in any direction
 
 ### Arrow Features
