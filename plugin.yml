@@ -1,0 +1,15 @@
+---
+name: SmartArrow
+main: cl4m1n3\smartarrow\SmartArrow
+api:
+- 4.0.0
+version: 1.1.0
+php:
+- 8
+author: cl4m1n3
+
+permissions:
+  use.smartarrow:
+    description: Allows you to use the /smartarrow command
+    default: op
+...
