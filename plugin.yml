@@ -3,7 +3,7 @@ name: SmartArrow
 main: cl4m1n3\smartarrow\SmartArrow
 api:
 - 4.0.0
-version: 1.1.0 (Beta)
+version: 1.1.1 (Beta)
 php:
 - 8
 author: cl4m1n3

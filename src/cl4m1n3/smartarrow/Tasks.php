@@ -28,30 +28,31 @@ class Tasks extends Task{
                         $tip = TextFormat::WHITE . "Target: " . TextFormat::GREEN . $target->getName();
                     }
                     $player->sendTip($tip);
-                    
-                    // Changing the trajectory of the arrow
-                    if($target = SmartArrow::getTarget($player))
+                }
+                
+                // Changing the trajectory of the arrow
+                if($target = SmartArrow::getTarget($player))
+                {
+                    foreach($player->getWorld()->getEntities() as $entity)
                     {
-                        foreach($player->getWorld()->getEntities() as $entity)
+                        if($entity instanceof Arrow && $entity->getOwningEntity() == $player)
                         {
-                            if($entity instanceof Arrow && $entity->getOwningEntity() == $player)
-                            {
-                                // Drawing up the vector of the arrow direction to the target
-                                $aloc = $entity->getLocation(); // Arrow location
-                                $tloc = $target->getLocation(); // Target location
+                            // Drawing up the vector of the arrow direction to the target
+                            $aloc = $entity->getLocation(); // Arrow location
+                            $tloc = $target->getLocation(); // Target location
                                 
-                                $x = $tloc->getX() - $aloc->getX();
-                                $y = ($tloc->getY() + 2) - $aloc->getY();
-                                $z = $tloc->getZ() - $aloc->getZ();
+                            $x = $tloc->getX() - $aloc->getX();
+                            $y = ($tloc->getY() + 2) - $aloc->getY();
+                            $z = $tloc->getZ() - $aloc->getZ();
                                 
-                                if($aloc->distance($tloc) >= 15 && $aloc->getY() - $tloc->getY() > 0 && $aloc->getY() - $tloc->getY() <= 10)
-                                {   
-                                    $y = 0;
-                                }
-                                
-                                $direction = (new Vector3($x, $y, $z))->normalize();
-                                $entity->setMotion($direction->multiply(3));
+                            if($aloc->distance($tloc) >= 15 && $aloc->getY() - $tloc->getY() > 0 && $aloc->getY() - $tloc->getY() <= 10)
+                            {   
+                                $y = 0;
                             }
+                                
+                            $direction = (new Vector3($x, $y, $z))->normalize();
+                            $entity->setMotion($direction->multiply(3));
+                            
                         }
                     }
                 }
