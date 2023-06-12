@@ -1,0 +1,8 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/cl4m1n3/SmartArrow
+build-by-default: true
+branches:
+- main
+projects:
+  SmartArrow:
+    path: ""
+...
