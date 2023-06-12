@@ -3,48 +3,60 @@ declare(strict_types=1);
 
 namespace cl4m1n3\smartarrow;
 
-use pocketmine\plugin\PluginBase;
-use pocketmine\player\Player;
-use pocketmine\Server;
 use cl4m1n3\smartarrow\command\SmartArrowCommand;
-use cl4m1n3\smartarrow\event\Event;
+use cl4m1n3\smartarrow\Event;
+use pocketmine\entity\Entity;
+use pocketmine\player\Player;
+use pocketmine\plugin\PluginBase;
+use pocketmine\Server;
 
 class SmartArrow extends PluginBase
 {
-    private static array $players = [];
-    private static array $targets = [];
-    
-    protected function onEnable() : void
+
+    private static $instance;
+
+    private array $players = [];
+
+    private array $targets = [];
+
+    public static function getInstance(): SmartArrow
     {
+        return self::$instance;
+    }
+
+    protected function onEnable(): void
+    {
+        self::$instance = $this;
+
         Server::getInstance()->getPluginManager()->registerEvents(new Event(), $this);
         Server::getInstance()->getCommandMap()->register("smartarrow", new SmartArrowCommand());
         $this->getScheduler()->scheduleRepeatingTask(new Tasks($this), 5);
     }
-    
-    public static function getStatus(Player $player) : bool
+
+    public function getStatus(Player $player): bool
     {
         $nick = $player->getName();
-        return array_key_exists($nick, self::$players) ? self::$players[$nick] : false;
+        return array_key_exists($nick, $this->players) ? $this->players[$nick] : false;
     }
-    
-    public static function getTarget(Player $player) : ?Player
+
+    public function getTarget(Player $player): ?Entity
     {
         $nick = $player->getName();
-        if(array_key_exists($player->getName(), self::$targets))
-        {
-            $target = Server::getInstance()->getPlayerByPrefix(self::$targets[$nick]);
-            return $target ? $target : null;
+
+        if (array_key_exists($player->getName(), $this->targets)) {
+            return Server::getInstance()->getWorldManager()->findEntity($this->targets[$nick]);
         }
         return null;
     }
-    
-    public static function setStatus(Player $player, bool $status) : void
+
+    public function setStatus(Player $player): void
     {
-        self::$players[$player->getName()] = $status;
+        $nick = $player->getName();
+        $this->players[$nick] = !$this->getStatus($player);
     }
-    
-    public static function setTarget(Player $player, $target) : void
+
+    public function setTarget(Player $player, Entity $target): void
     {
-        self::$targets[$player->getName()] = $target->getName();
+        $this->targets[$player->getName()] = $target->getId();
     }
 }
