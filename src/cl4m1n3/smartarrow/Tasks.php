@@ -43,10 +43,10 @@ class Tasks extends Task
                             $tloc = $target->getLocation(); // Target location
 
                             $x = $tloc->getX() - $aloc->getX();
-                            $y = ($tloc->getY() + 2) - $aloc->getY();
+                            $y = ($tloc->getY() + 1) - $aloc->getY();
                             $z = $tloc->getZ() - $aloc->getZ();
 
-                            if ($aloc->distance($tloc) >= 15 && $aloc->getY() - $tloc->getY() > 0 && $aloc->getY() - $tloc->getY() <= 25) {
+                            if ($aloc->distance($tloc) >= 25 && $aloc->getY() - $tloc->getY() > 0 && $aloc->getY() - $tloc->getY() <= 15) {
                                 $y = 2;
                             }
 
