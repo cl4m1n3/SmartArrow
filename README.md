@@ -1,5 +1,5 @@
 # SmartArrow
-Plugin for PocketMine-MP 4.X.X
+Plugin for PocketMine-MP 5.X.X
 
 ## Description
 This plugin turns an ordinary arrow into a smart one that flies to the target by itself
