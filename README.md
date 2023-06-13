@@ -6,7 +6,7 @@ This plugin turns an ordinary arrow into a smart one that flies to the target by
 
 ## Using
 - Activate the modification using the /smartarrow command
-- Shoot the player or hit him with a **BOW** so that he is identified as the target
+- Shoot the player or hit him with a **BOW** so that he is identified as a target, or use the command **/smartarrow (player)**
 - Now the player is the target and you can shoot in any direction
 
 Also, the instructions for use can be viewed at the link: https://youtu.be/SHJ_8vrGCp4
