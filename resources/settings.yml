@@ -1,0 +1,14 @@
+# command settings to activate smart arrow mode
+# command name
+command.name: smartarrow
+# sub-commands
+command.sub:
+- sarrow
+
+# smart arrow settings
+# maximum boom capture range (in blocks)
+capturing_target.max_distance: 150
+# maximum arrow flight time (in seconds)
+arrow.max_flight_time: 10
+# arrow flight speed
+arrow.speed: 2
