@@ -24,4 +24,5 @@ In the settings.yml file, you can configure:
 
 ### Commands and permissions
 • Permission to use the command: use.smartarrow (cannot be changed in the settings)
+<br>
 • Default command: /smartarrow or /sarrow (can be changed in settings)
