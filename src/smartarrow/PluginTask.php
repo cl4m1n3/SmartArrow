@@ -20,6 +20,8 @@ class PluginTask extends Task
         foreach ($this->plugin->arrows as $entity_id => $data) {
             if ($arrow = $this->plugin->getServer()->getWorldManager()->findEntity($entity_id)) {
 
+                $speed = $this->plugin->getSettingValue("arrow.speed");
+
                 if (is_null($data["target"])) {
                     $arrow->setMotion($data["last_motion"]->multiply($speed));
                     continue;
@@ -29,8 +31,6 @@ class PluginTask extends Task
                 $arrow_pos = $arrow->getPosition();
                 $vector = $target_pos->subtractVector($arrow_pos)->normalize();
                 $motion = $data["last_motion"]->addVector($vector)->normalize();
-
-                $speed = $this->plugin->getSettingValue("arrow.speed");
 
                 if (Physics::isOverloaded($data["last_motion"], $motion, 45)) {
                     $arrow->setMotion($data["last_motion"]->multiply($speed));

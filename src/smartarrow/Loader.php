@@ -63,7 +63,7 @@ class Loader extends PluginBase
         }
     }
 
-    public static function getInstance(): Loader
+    public static function getInstance(): self
     {
         return self::$instance;
     }

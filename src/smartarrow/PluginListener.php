@@ -60,8 +60,8 @@ class PluginListener implements Listener
             if ($object == $player)
                 continue;
 
-            $entity_pos = $object->getPosition();
-            $player_pos = $player->getPosition();
+            $entity_pos = $object->getPosition()->add(0, 1.5, 0);
+            $player_pos = $player->getPosition()->add(0, $player->getEyeHeight(), 0);
             $distance = $entity_pos->distance($player_pos);
 
             if ($distance > (float) $this->plugin->getSettingValue("capturing_target.max_distance"))

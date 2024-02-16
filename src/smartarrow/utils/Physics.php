@@ -3,8 +3,10 @@ declare(strict_types=1);
 
 namespace smartarrow\utils;
 
-use pocketmine\entity\Entity;
 use pocketmine\player\Player;
+use pocketmine\world\World;
+use pocketmine\block\Air;
+use pocketmine\math\Vector3;
 
 class Physics extends Math
 {
@@ -18,5 +20,4 @@ class Physics extends Math
 
         return !self::isOverloaded($direction1, $direction2, $view);
     }
-
 }
