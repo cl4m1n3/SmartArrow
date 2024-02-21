@@ -34,7 +34,7 @@ class Loader extends PluginBase
 
         $command_name = (string) $this->settings->get("command.name");
         $this->getServer()->getCommandMap()->register(
-            $command_name, 
+            $command_name,
             new SmartArrowCommand($this, $command_name, $this->settings->get("command.sub"))
         );
         $this->getScheduler()->scheduleRepeatingTask(new PluginTask($this), 1);

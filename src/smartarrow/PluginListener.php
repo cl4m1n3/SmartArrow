@@ -31,6 +31,8 @@ class PluginListener implements Listener
         if ($object = $this->getNearestPlayerFromPlayer($entity)) {
             $this->plugin->arrows[$projectile->getId()] = [
                 "target" => $object,
+                "target_last_position" => $object->getPosition(),
+                "last_position" => $projectile->getPosition(),
                 "last_motion" => $entity->getDirectionVector()->normalize(),
                 "time" => time()
             ];
