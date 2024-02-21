@@ -2,7 +2,7 @@
 name: SmartArrow
 main: smartarrow\Loader
 api:
-- 5.0.0
+- 3.0.0-ALPHA7
 version: 2.1.0
 author: cl4m1n3
 
