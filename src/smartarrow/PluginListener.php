@@ -33,7 +33,7 @@ class PluginListener implements Listener
                 "target" => $object,
                 "target_last_position" => $object->getPosition(),
                 "last_position" => $projectile->getPosition(),
-                "last_motion" => $entity->getDirectionVector()->normalize(),
+                "last_motion" => $entity->getDirectionVector()->subtract(0, 0.25, 0)->normalize(),
                 "time" => time()
             ];
             $entity->sendPopup(str_replace("{NICK}", $object->getName(), $this->plugin->getMessage("target_is_set")));
@@ -69,15 +69,14 @@ class PluginListener implements Listener
             if ($distance > (float) $this->plugin->getSettingValue("capturing_target.max_distance"))
                 continue;
 
-            if (!Physics::objectIsFieldOfView($player, $object, 45))
+            if (!Physics::objectIsFieldOfView($player, $object, 10))
                 continue;
 
             if (is_null($result)) {
                 $result = $object;
-                continue;
             }
 
-            if ($distance < $result->getPosition()->distance($object->getPosition())) {
+            if ($distance < $result->getPosition()->distance($player_pos)) {
                 $result = $object;
             }
         }

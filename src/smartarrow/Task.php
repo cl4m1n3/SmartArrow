@@ -29,12 +29,13 @@ class Task extends PluginTask
                 }
 
                 $arrow_pos = $arrow->getPosition();
-                $target_pos = $data["target"]->getPosition();
-
-                if (!$data["target"]->isGliding())
-                    $target_pos = $target_pos->add(0, 1.5, 0);
+                $target_pos = $data["target"]->getPosition()->add(0, 1.5, 0);
 
                 $preemptive = $target_pos->subtract($data["target_last_position"]);
+
+                if ($data["target"]->isGliding())
+                    $target_pos->add($preemptive->multiply(1.5));
+
                 $target_speed = Physics::getSpeed($target_pos, $data["target_last_position"], 1);
 
                 $projectile_speed = Physics::getSpeed($data["last_position"], $arrow_pos, 1);
