@@ -31,11 +31,15 @@ class SmartArrowCommand extends Command
             return;
         }
 
-        $this->plugin->updateStatus($sender);
+        if(($manager = $this->plugin->getManager())->hasPlayer($sender)){
+            $manager->removePlayer($sender);
+        } else{
+            $manager->registerPlayer($sender);
+        }
 
         $sender->sendMessage([
             true => $this->plugin->getMessage("status_activated"),
             false => $this->plugin->getMessage("status_deactivated")
-        ][$this->plugin->getStatus($sender)]);
+        ][$manager->hasPlayer($sender)]);
     }
 }
