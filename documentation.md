@@ -5,7 +5,6 @@ Version: 2.3.0
 
 - Getting a Manager:
     ```PHP
-    use smartarrow\Loader;
     $manager = Loader::getInstance()->getManager();
     ```
 
