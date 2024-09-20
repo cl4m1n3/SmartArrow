@@ -21,3 +21,6 @@ In the `settings.yml` file, you can configure:
 ## Commands and permissions
 - Permission to use the command: `use.smartarrow`
 - Default command: `/smartarrow` or `/sarrow` (can be changed in settings)
+
+## Plugin API
+- You can use the plugin in your own way, to do this, check out its [documentation](https://github.com/cl4m1n3/SmartArrow/blob/PMMP-5/documentation.md)
