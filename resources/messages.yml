@@ -1,0 +1,9 @@
+#chat
+status_activated: "§fThe guided arrow has been successfully §aactivated"
+status_deactivated: "§fThe guided arrow has been successfully §cdeactivated"
+dont_have_permission: "§cYou do not have permission to use this command!"
+
+# popup
+no_targets_found: "§6no targets found!"
+# {NICK} - target nickname
+target_is_set: "§fTarget set: §a{NICK}"
