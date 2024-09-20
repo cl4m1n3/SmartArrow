@@ -82,6 +82,7 @@ Version: 2.3.0
      * @return bool
      */
     $event->isOverloaded();
+    
     /** 
      * Returns the distance traveled in 1 tick
      * @return float|int
