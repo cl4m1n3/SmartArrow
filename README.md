@@ -1,27 +1,23 @@
 # SmartArrow
-The plugin adds auto-pointing arrows to the server for other players
-
-**Note**: The plugin is only suitable for PocketMine-MP kernels with API: 5.0.0 and higher
-
+The plugin will add a new type of arrows to your server, which will be able to fly towards the player on their own
 
 ## Using
-- Use the **/smartarrow** command to activate/deactivate the smart arrow mode
+- Use the `/smartarrow` command to activate/deactivate the smart arrow mode
 - Aim at the player and shoot an arrow
 
-Also, the instructions for use can be viewed at the link: https://youtu.be/SHJ_8vrGCp4
 
-### Features of the plugin
+## Features of the plugin
 - Support arrow flight physics
+- Support for guidance by half-straightening (trajectory calculation)
 - Flexible configuration
-- Does not require a large amount of server resources
+- The plugin is optimized and does not require a large amount of server resources
 
-### Customize the plugin for yourself
-In the settings.yml file, you can configure:
+## Customize the plugin for yourself
+In the `settings.yml` file, you can configure:
 - The name of the team and its sub-teams
 - The maximum target capture distance
 - Maximum arrow flight time
-- Arrow flight speed
 
-### Commands and permissions
-- Permission to use the command: use.smartarrow (cannot be changed in the settings)
-- Default command: /smartarrow or /sarrow (can be changed in settings)
+## Commands and permissions
+- Permission to use the command: `use.smartarrow` (cannot be changed in the settings)
+- Default command: `/smartarrow` or `/sarrow` (can be changed in settings)
