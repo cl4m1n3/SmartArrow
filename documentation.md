@@ -45,7 +45,7 @@ Version: 2.3.0
      * @param pocketmine\entity\projectile\Arrow $arrow
      * @return bool
      */
-    $manager->destrouArrow($arrow, $author, $target) // return true or false;
+    $manager->destroyArrow($arrow, $author, $target) // return true or false;
     ```
 
 ## Events
