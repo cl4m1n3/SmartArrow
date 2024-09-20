@@ -19,5 +19,5 @@ In the `settings.yml` file, you can configure:
 - Maximum arrow flight time
 
 ## Commands and permissions
-- Permission to use the command: `use.smartarrow` (cannot be changed in the settings)
+- Permission to use the command: `use.smartarrow`
 - Default command: `/smartarrow` or `/sarrow` (can be changed in settings)
